@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h4>Prestamos</h4>
+        </center>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Equipo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha Inicio</th>
+                    <th scope="col">Fecha Fin</th>
+                    <th scope="col">Fecha Entrega</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr th:each="prestamos:${prestamos}">
+                    <td scope="row" th:text="${prestamos.id}"></td> 
+                    <td scope="row" th:text="${prestamos.Usuario}"></td>
+                    <td scope="row" th:text="${prestamos.Equipo}"></td>
+                    <td scope="row" th:text="${prestamos.Estado}"></td>
+                    <td scope="row" th:text="${prestamos.FechaInicio}"></td>
+                    <td scope="row" th:text="${prestamos.FechaFin}"></td>
+                    <td scope="row" th:text="${prestamos.FechaEntrega}"></td>
+            </tbody>
+        </table>
+        <a th:href="@{/multas/select}" class="btn btn-primary mt-3">Multas</a>  
+    </div>
+</body>
+
+</html>
